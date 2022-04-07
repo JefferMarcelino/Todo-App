@@ -21,8 +21,6 @@ const AddTodo = (props) => {
 
             props.setTodos(everyTodos)
 
-            console.log(everyTodos)
-
             localStorage.clear()
             localStorage.setItem("tasks", JSON.stringify(everyTodos))
             inputTodo.value = ""

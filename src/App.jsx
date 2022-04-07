@@ -11,21 +11,17 @@ function App() {
   }
   
   const [ todos, setTodos ] = useState(localTodos)
-  //localStorage.setItem("tasks", JSON.stringify(basics))
   
 
   const deleteTodo = id => {
     
-    var everyTodos = todos.filter(todo => {
+    const everyTodos = todos.filter(todo => {
       if (todo.id !== id) {
         return todo
       }
     })
     
     setTodos(everyTodos)
-    
-    console.log(todos)
-  
     
     localStorage.clear()
     localStorage.setItem("tasks", JSON.stringify(everyTodos))

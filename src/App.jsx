@@ -4,19 +4,31 @@ import TodoList from "./components/TodoList"
 import AddTodo from "./components/AddTodo"
 
 function App() {
-  const [ todos, setTodos ] = useState([
-    {id: 1, task: "Do the Homework", did: true},
-    {id: 2, task: "Code a website", did: false},
-    {id: 3, task: "Cook", did: true},
-    {id: 4, task: "Buy a new Computer", did: false}
-])
+  if (!localStorage.getItem("tasks")) {
+    var localTodos = ""
+  } else {
+    var localTodos = JSON.parse(localStorage.getItem("tasks"))
+  }
+  
+  const [ todos, setTodos ] = useState(localTodos)
+  //localStorage.setItem("tasks", JSON.stringify(basics))
+  
 
   const deleteTodo = id => {
-    setTodos(todos.filter(todo => {
+    
+    var everyTodos = todos.filter(todo => {
       if (todo.id !== id) {
         return todo
       }
-    }))
+    })
+    
+    setTodos(everyTodos)
+    
+    console.log(todos)
+  
+    
+    localStorage.clear()
+    localStorage.setItem("tasks", JSON.stringify(everyTodos))
   }
 
   return (

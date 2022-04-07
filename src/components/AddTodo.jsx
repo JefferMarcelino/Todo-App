@@ -16,7 +16,15 @@ const AddTodo = (props) => {
         if (inputTodo.value !== "") {
             todo.id = Math.floor(Math.random() * 10000)
             todo.did = false
-            props.setTodos([...props.todos, todo])
+
+            var everyTodos = [...props.todos, todo]
+
+            props.setTodos(everyTodos)
+
+            console.log(everyTodos)
+
+            localStorage.clear()
+            localStorage.setItem("tasks", JSON.stringify(everyTodos))
             inputTodo.value = ""
         }
         

@@ -1,13 +1,13 @@
 const TodoList = (props) => {
     
     if (props.todos.length !== 0) {
-        
+        console.log(props.todos)
         var todolist = props.todos.map(todo => {
             var isDid = todo.did ? "todo did" : "todo"
-            console.log(isDid)
             return (
                 <div className={ isDid } key={ todo.id } onClick={(e) => {
                     e.target.classList.add("did")
+                    //localStorage.setItem("tasks", JSON.stringify(props.todos))
                     todo.did = true
                 }}>
                     <p>{ todo.task }</p>

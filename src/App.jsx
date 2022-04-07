@@ -11,7 +11,6 @@ function App() {
   }
   
   const [ todos, setTodos ] = useState(localTodos)
-  
 
   const deleteTodo = id => {
     

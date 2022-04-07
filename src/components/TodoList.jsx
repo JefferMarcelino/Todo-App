@@ -7,6 +7,7 @@ const TodoList = (props) => {
                 <div className={ isDid } key={ todo.id } onClick={(e) => {
                     e.target.classList.add("did")
                     todo.did = true
+                    console.log("III", props.todos)
                 }}>
                     <p>{ todo.task }</p>
                     <span onClick={(e) => { props.deleteTodo(todo.id) }}></span>

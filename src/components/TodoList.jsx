@@ -1,7 +1,6 @@
 const TodoList = (props) => {
     const todos = [...props.todos]
 
-    console.log(todos)
     localStorage.clear()
     localStorage.setItem("tasks", JSON.stringify(todos))
 
@@ -9,23 +8,32 @@ const TodoList = (props) => {
         if(e.target.classList.contains("did")) {
             e.target.classList.remove("did")
             todo.did = false
-            console.log("I", todos)
         } else {
             e.target.classList.add("did")
             todo.did = true
-            console.log("II", todos)
         }
-        console.log("III", todos)
 
         localStorage.clear()
         localStorage.setItem("tasks", JSON.stringify(todos))
     }
     
+    let lastColor = "purple"
     if (todos.length !== 0) {
         var todolist = todos.map(todo => {
             var isDid = todo.did ? "did" : ""
+
+            if (lastColor === "red") {
+                var newColor = "todo purple"
+                lastColor = "purple"
+            } else {
+                var newColor = "todo red"
+                lastColor = "red"
+            }
+
+            console.log(newColor)
+            var todoColor = newColor 
             return (
-                <div className="todo" key={ todo.id } onClick={(e) => { handleClick(e, todo) }}>
+                <div className={ todoColor } key={ todo.id } onClick={(e) => { handleClick(e, todo) }}>
                     <p className={ isDid }>{ todo.task }</p>
                     <span onClick={(e) => { props.deleteTodo(todo.id) }}></span>
                 </div>

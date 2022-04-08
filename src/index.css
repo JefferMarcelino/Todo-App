@@ -14,10 +14,14 @@ body {
   color: white;
 }
 
-
 .App {
   max-width: 600px;
   margin: 0 auto;
+}
+
+/* Header */
+header {
+  font-size: 1.5rem;
 }
 
 /* Form */
@@ -51,12 +55,20 @@ input {
 }
 
 .todo {
-  background-color: #EB553A;
+  /*background-color: #EB553A;*/
   margin: 10px 0;
   padding: 10px;
   border-radius: 10px;
   animation: enter 0.3s;
   position: relative;
+}
+
+.red {
+  background-color: #EB553A;
+}
+
+.purple {
+  background-color: #7D2AD4;
 }
 
 /* Enter todo animation */
@@ -70,12 +82,19 @@ input {
   }
 }
 
+.red span {
+  background-color: #8864af;
+}
+
+.purple span {
+  background-color: #EB553A; 
+}
+
 span {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   right: 10px;
-  background-color: #8864af;
   border-radius: 50%;
   width: 20px;
   height: 20px;
@@ -83,7 +102,7 @@ span {
 }
 
 span:hover {
-  background-color: #7b00ff;
+  filter: brightness(200%);
 }
 
 .todo p:hover,

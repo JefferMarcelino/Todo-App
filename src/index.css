@@ -24,7 +24,7 @@ body {
 form {
   display: flex;
   justify-content: space-around;
-  margin-bottom: 50px;
+  margin-top: 30px;
   width: 100%;
 }
 
@@ -35,7 +35,6 @@ button {
   border: none;
   border-radius: 5px;
 }
-
 
 input {
   outline: none;
@@ -56,8 +55,19 @@ input {
   margin: 10px 0;
   padding: 10px;
   border-radius: 10px;
-  transition: transform 0.3s;
+  animation: enter 0.3s;
   position: relative;
+}
+
+/* Enter todo animation */
+@keyframes enter {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 100%;
+  }
 }
 
 span {

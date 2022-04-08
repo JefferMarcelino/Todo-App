@@ -5,8 +5,12 @@ const TodoList = (props) => {
             var isDid = todo.did ? "todo did" : "todo"
             return (
                 <div className={ isDid } key={ todo.id } onClick={(e) => {
-                    e.target.classList.add("did")
-                    todo.did = true
+                    e.target.classList.toggle("did")
+                    if(e.target.classList.contains("did")) {
+                        todo.did = true
+                    } else {
+                        todo.did = false
+                    }
                     console.log("III", props.todos)
                 }}>
                     <p>{ todo.task }</p>

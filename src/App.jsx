@@ -29,8 +29,8 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <TodoList todos={ todos } deleteTodo={ deleteTodo }/>
       <AddTodo todos={ todos } setTodos={ setTodos }/>
+      <TodoList todos={ todos } deleteTodo={ deleteTodo }/>
     </div>
   )
 }

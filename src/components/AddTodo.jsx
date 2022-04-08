@@ -14,10 +14,10 @@ const AddTodo = (props) => {
         const inputTodo = document.querySelector("input")
         
         if (inputTodo.value !== "") {
-            todo.id = Math.floor(Math.random() * 10000)
+            todo.id = Math.floor(Math.random() * 10000000)
             todo.did = false
 
-            var everyTodos = [...props.todos, todo]
+            var everyTodos = [todo, ...props.todos]
 
             props.setTodos(everyTodos)
 

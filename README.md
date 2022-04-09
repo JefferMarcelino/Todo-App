@@ -10,7 +10,7 @@
 
 ### Mobile:
 <p align="center">
-  <img alt="Preview 2" src=".github/preview_mobile.gif"> 
+  <img alt="Preview 2" src=".github/preview_mobile.gif" width="80%"> 
 </p>
 
 <br>

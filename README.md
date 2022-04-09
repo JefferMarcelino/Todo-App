@@ -1,18 +1,10 @@
 # Todo APP
 
 # Previews
-### Computer:
-<p align="center">
-  <img alt="Preview 1" src=".github/preview_pc.gif">
+<p>
+  <img alt="Preview 1" src=".github/preview_pc.gif" width="60%">  
+  <img alt="Preview 2" src=".github/preview_mobile.gif" width="15.2%"> 
 </p>
-
-<br>
-
-### Mobile:
-<p align="center">
-  <img alt="Preview 2" src=".github/preview_mobile.gif" width="80%"> 
-</p>
-
 <br>
 
 ## 🚀 Technologies

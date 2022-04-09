@@ -1,7 +1,7 @@
 import { createContext } from "react"
 
 var colors = {
-    isLightTheme: false,
+    isLightTheme: true,
     light: { syntax: "white", bg: "#31D2F6" },
     dark: { syntax: "white", bg: "#252323" },
 }

@@ -3,13 +3,15 @@
 # Previews
 ### Computer:
 <p align="center">
-  <img alt="Preview 1" src=".github/video.gif" width="90%">
+  <img alt="Preview 1" src=".github/preview_pc.gif">
 </p>
 
 <br>
 
 ### Mobile:
-<img alt="Preview 2" src=".github/preview4.png" width="30%"> <img alt="Preview 2" src=".github/preview5.png" width="30%">
+<p align="center">
+  <img alt="Preview 2" src=".github/preview_mobile.gif"> 
+</p>
 
 <br>
 

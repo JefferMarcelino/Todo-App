@@ -17,23 +17,12 @@ const TodoList = (props) => {
         localStorage.setItem("tasks", JSON.stringify(todos))
     }
     
-    let lastColor = "purple"
     if (todos.length !== 0) {
         var todolist = todos.map(todo => {
             var isDid = todo.did ? "did" : ""
 
-            if (lastColor === "red") {
-                var newColor = "todo purple"
-                lastColor = "purple"
-            } else {
-                var newColor = "todo red"
-                lastColor = "red"
-            }
-
-            console.log(newColor)
-            var todoColor = newColor 
             return (
-                <div className={ todoColor } key={ todo.id } onClick={(e) => { handleClick(e, todo) }}>
+                <div className="todo red" key={ todo.id } onClick={(e) => { handleClick(e, todo) }}>
                     <p className={ isDid }>{ todo.task }</p>
                     <span onClick={(e) => { props.deleteTodo(todo.id) }}></span>
                 </div>

@@ -11,6 +11,7 @@ const AddTodo = (props) => {
     
     const handleSubmit = e => {
         e.preventDefault()
+        
         const inputTodo = document.querySelector("input")
         
         if (inputTodo.value !== "") {

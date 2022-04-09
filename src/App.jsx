@@ -2,7 +2,6 @@ import { useState, useContext, useEffect } from "react";
 import Header from "./components/Header"
 import TodoList from "./components/TodoList"
 import AddTodo from "./components/AddTodo"
-import { ThemeContext } from "./contexts/ThemeContext"
 
 
 if (!localStorage.getItem("tasks")) {
@@ -24,15 +23,8 @@ function App() {
     setTodos(todos.filter(todo => todo.id === id ? false : todo))
   }
 
-  //const { isLightTheme, dark, light } = useContext(ThemeContextProvider)
-
-  var theme = useContext(ThemeContext)
-  var theme = theme.isLightTheme ? theme.light : theme.dark
-
-
-
   return (
-    <div className="App" style={{ background: theme.bg }}>
+    <div className="App">
       <div className="container">
         <Header />
         <AddTodo todos={ todos } setTodos={ setTodos }/>

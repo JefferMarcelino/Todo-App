@@ -21,7 +21,7 @@ This project was developed with the following technologies:
 This is a simple to-do app that you can make a list of things you want to do.
 
 
-## 📝 Licença
+## 📝 License
 
 This project is under MIT license. See the [LICENSE](./LICENSE) file for more details.
 

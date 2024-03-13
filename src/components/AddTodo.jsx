@@ -1,39 +1,31 @@
-const AddTodo = (props) => {
-    var todo = {
-        task: ""
-    }
+import { useState } from "react";
+import { useTodoContext } from "../contexts/TodoListContext";
 
-    const handleChange = e => {
-        todo.task = e.target.value
-    }
-    
-    const handleSubmit = e => {
-        e.preventDefault()
-        
-        const inputTodo = document.querySelector("input")
-        
-        if (inputTodo.value !== "") {
-            todo.id = Math.floor(Math.random() * 10000000)
-            todo.did = false
+const AddTodo = () => {
+  const [ newTodo, setNewTodo ] = useState("");
+  const { addTodo } = useTodoContext();
 
-            var everyTodos = [todo, ...props.todos]
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-            props.setTodos(everyTodos)
+    if (newTodo !== "") {
+      addTodo(newTodo);
+    };
+  };
 
-            localStorage.clear()
-            localStorage.setItem("tasks", JSON.stringify(everyTodos))
-            inputTodo.value = ""
-        }
-        
-        inputTodo.focus()
-    }
+  return (
+    <form onSubmit={handleSubmit}>
+      <input
+        type="text"
+        placeholder="New Todo..."
+        onChange={(e) => {
+          setNewTodo(e.target.value);
+        }}
+      />
 
-    return (
-        <form onSubmit={ handleSubmit }>
-            <input type="text" placeholder="New Todo..." onChange={ handleChange } />
-            <button>Add</button>
-        </form>
-    );
+      <button type="submit">Add</button>
+    </form>
+  );
 }
 
 export default AddTodo;
